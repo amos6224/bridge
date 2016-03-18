@@ -1,0 +1,20 @@
+<!-- extend the base layout -->
+{% extends "blocks/layout.html" %}
+
+{% block content %}
+
+<form action="" method="post" class="new-entry">
+    <div >
+        <ul style="width:500px;">
+
+                <select name="selected_column" width="100px" style ="float:right;">
+                    {% for column in columns %}  
+                    <option >{{column}}</option>
+                    {% endfor %}
+                </select>
+        </div>
+        <br>
+        <button  type="submit" class="btn btn-primary">Next</button>
+    </form>
+
+    {% endblock %}

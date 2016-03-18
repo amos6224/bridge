@@ -1,0 +1,9 @@
+<li style="list-style-type: none; border-bottom:1px dotted #CCC; margin-top:20px;">
+  <label style="height:40px; width:150px; text-align:top;">{{column_name}} :</label>
+  <select name="{{column_name}}" width="100px" style ="float:right;">
+    <option >{{alias_field_dict[column_name]}}</option>
+    {% for column in field_list %}  
+    <option >{{column}}</option>
+    {% endfor %}
+  </select>
+</li>

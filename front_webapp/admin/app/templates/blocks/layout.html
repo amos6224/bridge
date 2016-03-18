@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clean a file for import</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+</head>
+<body>
+<header>
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <img class="navbar-brand" src="{{url_for('static',filename='img/icon.png')}}" width=70px	>
+            {% if 'google_token' not in session %}
+            <a class="navbar-brand" href="{{ url_for('auth.login') }}">log in</a>
+            {% else %}
+            <a class="navbar-brand" href="{{url_for('upload.upload_file')}}">Import a file</a>
+            <a class="navbar-brand" href="{{ url_for('auth.logout') }}">log out</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="text-primary text-center">
+    {% for message in get_flashed_messages() %}
+    <strong>{{ message }}</strong>
+    {% endfor %}
+</div>
+</p>
+      </header>
+        <div class= "container">
+{% block content %}
+{% endblock %}
+                         </div>
+                </body>
+</html>

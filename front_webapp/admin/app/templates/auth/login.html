@@ -1,0 +1,32 @@
+{% extends "blocks/layout.html" %}
+{% block content %}
+  <h2>Login</h2>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+ 
+ {% if 'google_token' not in sessio %}
+  
+  
+  <form action="{{ url_for('auth.login') }}" method=post>
+    <input type="submit" value='Login using your Google Account' class="btn btn-primary">
+ 		
+    <dl>
+      <dt>Username:
+      <dd><input type=text name=username>
+      <dt>Password:
+      <dd><input type=password name=password>
+      <dd><input type=submit value=Login>
+    </dl>
+  </form>
+   
+{% else %}
+  <div><em>It looks like you are already logged in my dear</em></div>
+{% endif %}
+  
+
+
+{% endblock %}
+
+
+
+
+

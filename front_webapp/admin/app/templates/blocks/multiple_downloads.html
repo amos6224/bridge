@@ -1,0 +1,19 @@
+<!-- extend the base layout -->
+{% extends "blocks/layout.html" %}
+
+{% block content %}
+
+<form action="" method="post" class="new-entry" )>
+
+  {% for file in files %}
+
+    <button  type="submit" name = "{{file}}" value ="ok" class="btn btn-primary">{{file}}</button>
+    <br>
+
+  {% endfor %}
+    <br>
+    <button  type="submit" name = "next" value="ok" class="btn btn-primary">Next</button>
+    </button>
+</form>
+ 
+ {% endblock %}

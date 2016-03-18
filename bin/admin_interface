@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..")))
+
+require 'admin_interface'
+
+AdminInterface.run!
